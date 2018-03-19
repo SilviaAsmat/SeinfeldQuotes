@@ -1,0 +1,116 @@
+{
+    "languageModel": {
+        "invocationName": "color expert",
+        "intents": [
+            {
+                "name": "MyColorIsIntent",
+                "slots": [
+                    {
+                        "name": "Color",
+                        "type": "LIST_OF_COLORS"
+                    }
+                ],
+                "samples": [
+                    "my favorite color is {Color}"
+                ]
+            },
+            {
+                "name": "WhatsMyColorIntent",
+                "slots": [],
+                "samples": [
+                    "what's my favorite color",
+                    "what is my favorite color",
+                    "what's my color",
+                    "what is my color",
+                    "my color",
+                    "my favorite color",
+                    "get my color",
+                    "get my favorite color",
+                    "give me my favorite color",
+                    "give me my color",
+                    "what my color is",
+                    "what my favorite color is",
+                    "yes",
+                    "yup",
+                    "sure",
+                    "yes please"
+                ]
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            }
+        ],
+        "types": [
+            {
+                "name": "LIST_OF_COLORS",
+                "values": [
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "green",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "red",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "blue",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "orange",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "gold",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "silver",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "yellow",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "black",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "white",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
