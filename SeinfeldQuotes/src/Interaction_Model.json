@@ -1,116 +1,165 @@
 {
-    "languageModel": {
-        "invocationName": "color expert",
-        "intents": [
-            {
-                "name": "MyColorIsIntent",
-                "slots": [
-                    {
-                        "name": "Color",
-                        "type": "LIST_OF_COLORS"
-                    }
-                ],
-                "samples": [
-                    "my favorite color is {Color}"
-                ]
-            },
-            {
-                "name": "WhatsMyColorIntent",
-                "slots": [],
-                "samples": [
-                    "what's my favorite color",
-                    "what is my favorite color",
-                    "what's my color",
-                    "what is my color",
-                    "my color",
-                    "my favorite color",
-                    "get my color",
-                    "get my favorite color",
-                    "give me my favorite color",
-                    "give me my color",
-                    "what my color is",
-                    "what my favorite color is",
-                    "yes",
-                    "yup",
-                    "sure",
-                    "yes please"
-                ]
-            },
-            {
-                "name": "AMAZON.HelpIntent",
-                "slots": [],
-                "samples": []
-            }
+  "languageModel": {
+    "invocationName": "seinfeld quotes",
+    "intents": [
+      {
+        "name": "GetQuoteFromNameIntent",
+        "slots": [
+          {
+            "name": "name",
+            "type": "list_of_characters"
+          }
         ],
-        "types": [
-            {
-                "name": "LIST_OF_COLORS",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "green",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "red",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "blue",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "orange",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "gold",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "silver",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "yellow",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "black",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "white",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            }
+        "samples": [
+          "get quote from {name}"
         ]
-    }
+      },
+      {
+        "name": "GetRandomQuoteIntent",
+        "slots": [],
+        "samples": [
+          "get random quote",
+          "get any quote",
+          "get quote"
+        ]
+      },
+      {
+        "name": "GetQuoteFromSeasonIntent",
+        "slots": [
+          {
+            "name": "season_number",
+            "type": "AMAZON.NUMBER"
+          }
+        ],
+        "samples": [
+          "get quote from season {season_number}"
+        ]
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "slots": [],
+        "samples": []
+      }
+    ],
+    "types": [
+      {
+        "name": "list_of_characters",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "jerry",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "kramer",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "elaine",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "george",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "newman",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "season_number",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "1",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "2",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "3",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "4",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "5",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "6",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "7",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "8",
+              "synonyms": []
+            }
+
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "9",
+              "synonyms": []
+            }
+
+          }
+
+
+        ]
+      }
+    ]
+  }
 }
