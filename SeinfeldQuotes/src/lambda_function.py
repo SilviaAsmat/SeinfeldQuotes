@@ -178,10 +178,21 @@ def handle_get_quote_from_name_intent(intent):
     return build_response({}, build_speechlet_response(
         card_title, quote, reprompt_text, should_end_session))
 
+
+def handle_get_random_quote_intent(intent):
+    card_title = intent['name']
+    quote = get_random_quote()
+    reprompt_text = None
+    should_end_session = True
+    return build_response({}, build_speechlet_response(
+        card_title, quote, reprompt_text, should_end_session))
+
 # TODO get quote from Database
 def get_quote_from_name(name):
     return 'These pretzels are making me thirsty'
 
+def get_random_quote():
+    return 'You kept making all the stops, well people kept ringing the bell'
 def on_session_ended(session_ended_request, session):
     """ Called when the user ends the session.
 
