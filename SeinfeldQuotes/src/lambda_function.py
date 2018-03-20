@@ -50,13 +50,13 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Welcome to the Alexa Skills Kit sample. " \
-                    "Please tell me what quote you want by saying, " \
-                    "get a quote by stating the name, season, or by random."
+    speech_output = "Welcome to Seinfeld Quotes, the skill about nothing, " \
+                    "Tell me what kind of quote you would like, " \
+                    "by name, season, or by random."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "Please tell me what quote you want by saying, " \
-                    "get a quote by stating the name, season, or by random."
+    reprompt_text = "Tell me what kind of quote you would like, " \
+                    "by name, season, or by random."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
@@ -75,49 +75,12 @@ def handle_session_end_request():
 def create_favorite_color_attributes(favorite_color):
     return {"favoriteColor": favorite_color}
 
-def create_random_quote(random_quote):
-    return{"randomQuote": random_quote}
 
-
-def create_season_quote(season_quote):
-    return {"seasonQuote": season_quote}
-
-
-def create_name_quote(name_quote):
-    return {"nameQuote": name_quote}
-
-
-def set_random_quote_in_session(intent, session):
+def set_color_in_session(intent, session):
     """ Sets the color in the session and prepares the speech to reply to the
     user.
     """
 
-    card_title = intent['name']
-    session_attributes = {}
-    should_end_session = False
-
-    if 'randomQuote' in intent['slots']:
-        random_quote = intent['slots']['randomQuote']['value']
-        session_attributes = create_random_quote(random_quote)
-        speech_output = "Your quote is " + \
-                        random_quote
-
-        reprompt_text = "Please tell me what quote you want by saying, " \
-                        "get a quote by stating the name, season, or by random."
-    else:
-        speech_output = "I'm not sure what your quote is. " \
-                        "Please try again."
-        reprompt_text = "Please tell me what quote you want by saying, " \
-                        "get a quote by stating the name, season, or by random."
-    return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))
-
-def set_color_in_session(intent, session):
-    """
-#Sets the color in the session and prepares the speech to reply to the
- #   user.
-
-"""
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
@@ -141,26 +104,6 @@ def set_color_in_session(intent, session):
         card_title, speech_output, reprompt_text, should_end_session))
 
 
-def get_random_quote_session(intent, session):
-    session_attributes = {}
-    reprompt_text = None
-
-    if session.get('attributes', {}) and "randomQuote" in session.get('attributes', {}):
-        random_quote = session['attributes']['randomQuote']
-        speech_output = "Your random quote is " + random_quote + \
-                        ". Goodbye."
-        should_end_session = True
-    else:
-        speech_output = "I'm not sure what your quote is. " \
-                        "You can say, get a random quote or specify the name or season."
-        should_end_session = False
-
-    # Setting reprompt_text to None signifies that we do not want to reprompt
-    # the user. If the user does not respond or says something that is not
-    # understood, the session will end.
-    return build_response(session_attributes, build_speechlet_response(
-        intent['name'], speech_output, reprompt_text, should_end_session))
-
 def get_color_from_session(intent, session):
     session_attributes = {}
     reprompt_text = None
@@ -180,6 +123,7 @@ def get_color_from_session(intent, session):
     # understood, the session will end.
     return build_response(session_attributes, build_speechlet_response(
         intent['name'], speech_output, reprompt_text, should_end_session))
+
 
 # --------------- Events ------------------
 
@@ -202,27 +146,7 @@ def on_launch(launch_request, session):
 
 
 def on_intent(intent_request, session):
-    """Called when the user specifies an intent for this skill """
-
-    print("on_intent requestId=" + intent_request['requestId'] + ", sessionId=" + session['sessionId'])
-
-    intent = intent_request['intent']
-    intent_name = intent_request['intent']['name']
-
-    """Dispatch to your skill's intent handlers"""
-    if intent_name == "MyColorIsIntent":
-        return set_color_in_session(intent, session)
-    elif intent_name == "WhatsMyColorIntent":
-        return get_color_from_session(intent, session)
-    elif intent_name == "AMAZON.HelpIntent":
-        return get_welcome_response()
-    elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
-        return handle_session_end_request()
-    else:
-        raise ValueError("Invalid intent")
-
-def on_intent(intent_request, session):
-    """Called when the user specifies an intent for this skill """
+    """ Called when the user specifies an intent for this skill """
 
     print("on_intent requestId=" + intent_request['requestId'] +
           ", sessionId=" + session['sessionId'])
@@ -241,7 +165,6 @@ def on_intent(intent_request, session):
         return handle_session_end_request()
     else:
         raise ValueError("Invalid intent")
-
 
 
 def on_session_ended(session_ended_request, session):
