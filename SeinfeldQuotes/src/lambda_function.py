@@ -155,9 +155,11 @@ def on_intent(intent_request, session):
     intent_name = intent_request['intent']['name']
 
     # Dispatch to your skill's intent handlers
-    if intent_name == "MyColorIsIntent":
-        return set_color_in_session(intent, session)
-    elif intent_name == "WhatsMyColorIntent":
+    if intent_name == "GetQuoteFromNameIntent":
+        return handle_get_quote_from_name_intent(intent)
+    elif intent_name == "GetRandomQuoteIntent":
+        return get_color_from_session(intent, session)
+    elif intent_name == "GetQuoteFromSeasonIntent":
         return get_color_from_session(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
@@ -166,6 +168,19 @@ def on_intent(intent_request, session):
     else:
         raise ValueError("Invalid intent")
 
+def handle_get_quote_from_name_intent(intent):
+    card_title = intent['name']
+    name = intent['slots']['name']['value']
+    quote = get_quote_from_name(name)
+    reprompt_text = None
+    should_end_session = True
+
+    return build_response({}, build_speechlet_response(
+        card_title, quote, reprompt_text, should_end_session))
+
+# TODO get quote from Database
+def get_quote_from_name(name):
+    return 'These pretzels are making me thirsty'
 
 def on_session_ended(session_ended_request, session):
     """ Called when the user ends the session.
