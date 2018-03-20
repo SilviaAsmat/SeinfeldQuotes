@@ -1,155 +1,155 @@
 {
-  "languageModel": {
-    "invocationName": "seinfeld quotes",
-    "intents": [
-      {
-        "name": "GetQuoteFromNameIntent",
-        "slots": [
-          {
-            "name": "name",
-            "type": "list_of_characters"
-          }
+    "languageModel": {
+        "invocationName": "seinfeld quotes",
+        "intents": [
+            {
+                "name": "GetQuoteFromNameIntent",
+                "slots": [
+                    {
+                        "name": "name",
+                        "type": "list_of_characters"
+                    }
+                ],
+                "samples": [
+                    "get quote from {name}"
+                ]
+            },
+            {
+                "name": "GetRandomQuoteIntent",
+                "slots": [],
+                "samples": [
+                    "get random quote",
+                    "get any quote",
+                    "get quote"
+                ]
+            },
+            {
+                "name": "GetQuoteFromSeasonIntent",
+                "slots": [
+                    {
+                        "name": "season_number",
+                        "type": "season_number"
+                    }
+                ],
+                "samples": [
+                    "get quote from season {season_number}"
+                ]
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            }
         ],
-        "samples": [
-          "get quote from {name}"
+        "types": [
+            {
+                "name": "list_of_characters",
+                "values": [
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "jerry",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "kramer",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "elaine",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "george",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "newman",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "season_number",
+                "values": [
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "1",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "2",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "3",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "4",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "5",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "6",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "7",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "8",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "9",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "name": "GetRandomQuoteIntent",
-        "slots": [],
-        "samples": [
-          "get random quote",
-          "get any quote",
-          "get quote"
-        ]
-      },
-      {
-        "name": "GetQuoteFromSeasonIntent",
-        "slots": [
-          {
-            "name": "season_number",
-            "type": "AMAZON.NUMBER"
-          }
-        ],
-        "samples": [
-          "get quote from season {season_number}"
-        ]
-      },
-      {
-        "name": "AMAZON.HelpIntent",
-        "slots": [],
-        "samples": []
-      }
-    ],
-    "types": [
-      {
-        "name": "list_of_characters",
-        "values": [
-          {
-            "id": "",
-            "name": {
-              "value": "jerry",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "kramer",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "elaine",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "george",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "newman",
-              "synonyms": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "season_number",
-        "values": [
-          {
-            "id": "",
-            "name": {
-              "value": "1",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "2",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "3",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "4",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "5",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "6",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "7",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "8",
-              "synonyms": []
-            }
-          },
-          {
-            "id": "",
-            "name": {
-              "value": "9",
-              "synonyms": []
-            }
-          }
-        ]
-      }
-    ]
-  }
+    }
 }
