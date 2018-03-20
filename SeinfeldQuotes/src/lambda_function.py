@@ -187,12 +187,24 @@ def handle_get_random_quote_intent(intent):
     return build_response({}, build_speechlet_response(
         card_title, quote, reprompt_text, should_end_session))
 
+
+def handle_get_quote_from_season_intent(intent):
+    card_title = intent['name']
+    number = intent['slots']['season_number']['value']
+    quote = get_quote_from_season(number)
+    reprompt_text = None
+    should_end_session = True
+    return build_response({}, build_speechlet_response(
+        card_title, quote, reprompt_text, should_end_session))
+
 # TODO get quote from Database
 def get_quote_from_name(name):
     return 'These pretzels are making me thirsty'
 
 def get_random_quote():
     return 'You kept making all the stops, well people kept ringing the bell'
+def get_quote_from_season(number):
+    return 'You double chipped the chip'
 def on_session_ended(session_ended_request, session):
     """ Called when the user ends the session.
 
